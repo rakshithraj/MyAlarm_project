@@ -22,6 +22,7 @@
             android:name=".AddAlarmActivity" />
         <activity
             android:theme="@android:style/Theme.Dialog"
+            android:screenOrientation="portrait"
             android:name=".AlarmRingActivity" />
         <activity
             android:name=".NotificationActivity" />

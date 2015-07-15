@@ -44,6 +44,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                             @Override
                             public void onDismiss(ListView listView, int[] reverseSortedPositions) {
                                 for (int position : reverseSortedPositions) {
+                                    if(position<data.size())
                                     data.remove(position);
                                     alarmInfiList=new AlarmInfiList();
                                     alarmInfiList= alarmInfiList.DeSerialize(MainActivity.this);
@@ -55,7 +56,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                                     int alarmId=alarmInfiList.getAlamInfoList().get(position).getId();
                                     PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this,alarmId, myIntent, 0);
                                     alarmManager.cancel(pendingIntent);
-
+                                    if(position<alarmInfiList.getAlamInfoList().size())
                                     alarmInfiList.getAlamInfoList().remove(position);
                                     alarmInfiList.Serialize(MainActivity.this);
                                 }

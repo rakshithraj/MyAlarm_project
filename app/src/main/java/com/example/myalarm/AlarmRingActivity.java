@@ -154,6 +154,7 @@ public class AlarmRingActivity extends Activity implements View.OnClickListener,
                 alarmInfiList= alarmInfiList.DeSerialize(this);
                 if(alarmInfiList==null)
                     alarmInfiList=new AlarmInfiList();
+                if(alarmInfiList.getAlamInfoList().size()>0)
                 alarmInfiList.getAlamInfoList().remove(0);
                 alarmInfiList.Serialize(this);
                 confirm_dialog.setCancelable(false);
